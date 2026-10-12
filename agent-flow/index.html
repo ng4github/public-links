@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PPT agent flow</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2937;--box:#ffffff;--line:#475569;--prop:#ccfbf1;--propline:#0f766e;--store:#fef3c7;--own:#e0e7ff}
+@media (prefers-color-scheme:dark){:root{--bg:#111827;--fg:#e5e7eb;--box:#1f2937;--line:#94a3b8;--prop:#134e4a;--propline:#5eead4;--store:#422006;--own:#312e81}}
+body{margin:0;padding:16px;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}
+h1{font-size:20px;margin:0 0 4px}svg{width:100%;max-width:1100px;height:auto;display:block;margin:12px 0}
+.b rect{fill:var(--box);stroke:var(--line);stroke-width:1.5;rx:8}.b text{fill:var(--fg);font-size:12.5px}.b .t{font-weight:600}
+.p rect{fill:var(--prop);stroke:var(--propline);stroke-dasharray:6 4;stroke-width:2}
+.o rect{fill:var(--own)}.s rect{fill:var(--store)}
+.a{stroke:var(--line);stroke-width:1.5;fill:none;marker-end:url(#h)}.d{stroke:var(--propline);stroke-width:2;stroke-dasharray:6 4;fill:none;marker-end:url(#hp)}
+.ap{stroke:var(--line);stroke-width:1.5;stroke-dasharray:2 3;fill:none;marker-end:url(#h)}
+.l{font-size:11px;fill:var(--fg)}
+.sc{overflow-x:auto;-webkit-overflow-scrolling:touch}.sc svg{min-width:900px}
+ul{padding-left:18px;max-width:1000px}.sw{display:inline-block;width:26px;height:12px;border:1.5px solid var(--line);vertical-align:middle;margin-right:6px;background:var(--box)}
+</style></head><body>
+<h1>How the PPT agent team works</h1>
+<p>Checked against agents/roster.md and agents/routines.md on 2026-10-12 (first checked 2026-10-07; Eval agent added, CRM daily, weekly meeting shown as a job inside the Manager box, and schedules corrected for the October 11 and 12 changes). On a phone, scroll the diagram sideways. Solid boxes exist today. The dashed teal box is <b>proposed, not built</b>.</p>
+<div class="sc"><svg viewBox="0 0 1100 700" role="img" aria-label="Agent flow diagram">
+<defs><marker id="h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker>
+<marker id="hp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0f766e"/></marker></defs>
+<!-- owner, PPT -->
+<g class="b o"><rect x="430" y="10" width="200" height="50"/><text class="t" x="530" y="31" text-anchor="middle">Owner</text><text x="530" y="48" text-anchor="middle">approves every brief</text></g>
+<g class="b"><rect x="430" y="110" width="200" height="56"/><text class="t" x="530" y="132" text-anchor="middle">PPT assistant</text><text x="530" y="150" text-anchor="middle">owner emails ppt@</text></g>
+<path class="a" d="M500 60 L500 110"/><path class="a" d="M560 110 L560 60"/>
+<text class="l" x="440" y="90" text-anchor="end">email, phone</text><text class="l" x="570" y="90">results, questions</text>
+<!-- manager -->
+<g class="b"><rect x="40" y="110" width="200" height="106"/><text class="t" x="140" y="132" text-anchor="middle">Manager + secretary</text><text x="140" y="150" text-anchor="middle">every 6 hours</text><text x="140" y="172" text-anchor="middle">Job: weekly meeting,</text><text x="140" y="188" text-anchor="middle">the Sunday 8pm ET run,</text><text x="140" y="204" text-anchor="middle">by email through PPT</text></g>
+<path class="a" d="M240 138 L430 138"/><text class="l" x="335" y="130" text-anchor="middle">notes</text>
+<!-- orchestrator -->
+<g class="b"><rect x="430" y="240" width="200" height="56"/><text class="t" x="530" y="262" text-anchor="middle">Orchestrator</text><text x="530" y="280" text-anchor="middle">signed briefs, checks hourly</text></g>
+<path class="a" d="M530 166 L530 240"/><text class="l" x="538" y="205">signed brief,</text><text class="l" x="538" y="218">after owner says go</text>
+<!-- specialists -->
+<g class="b"><rect x="260" y="370" width="170" height="56"/><text class="t" x="345" y="392" text-anchor="middle">Coding specialist</text><text x="345" y="410" text-anchor="middle">code, pull requests</text></g>
+<g class="b"><rect x="450" y="370" width="170" height="56"/><text class="t" x="535" y="392" text-anchor="middle">General task agent</text><text x="535" y="410" text-anchor="middle">documents, plans, copy</text></g>
+<g class="b"><rect x="640" y="370" width="170" height="56"/><text class="t" x="725" y="392" text-anchor="middle">Reviewer</text><text x="725" y="410" text-anchor="middle">checks Done means</text></g>
+<path class="a" d="M490 296 L345 370"/><path class="a" d="M530 296 L535 370"/><path class="a" d="M570 296 L725 370"/>
+<!-- crm -->
+<g class="b"><rect x="40" y="370" width="190" height="56"/><text class="t" x="135" y="392" text-anchor="middle">CRM and outreach</text><text x="135" y="410" text-anchor="middle">daily, drafts only</text></g>
+<path class="a" d="M40 150 L18 150 L18 398 L40 398"/><text class="l" x="40" y="445">via agents/crm-assignments.md</text>
+<!-- literature -->
+<g class="b"><rect x="860" y="110" width="200" height="56"/><text class="t" x="960" y="132" text-anchor="middle">Literature agent</text><text x="960" y="150" text-anchor="middle">once a day</text></g>
+<g class="b"><rect x="860" y="210" width="200" height="56"/><text class="t" x="960" y="232" text-anchor="middle">Literature reviewer</text><text x="960" y="250" text-anchor="middle">once a day</text></g>
+<path class="a" d="M860 138 L630 138"/><text class="l" x="745" y="154" text-anchor="middle">review batch to email</text>
+<path class="a" d="M960 166 L960 210"/>
+<g class="b"><rect x="860" y="10" width="200" height="56"/><text class="t" x="960" y="32" text-anchor="middle">Session librarian</text><text x="960" y="50" text-anchor="middle">every 6 hours, session notes</text></g>
+<!-- eval -->
+<g class="b"><rect x="670" y="10" width="140" height="56"/><text class="t" x="740" y="32" text-anchor="middle">Eval agent</text><text x="740" y="50" text-anchor="middle">daily 11:00 UTC</text></g>
+<path class="a" d="M690 66 L690 118 L630 118"/><text class="l" x="697" y="100">eval email</text>
+<path class="a" d="M630 128 L790 128 L790 66"/><text class="l" x="784" y="122" text-anchor="end">owner's replies</text>
+<path class="ap" d="M810 28 L820 28 L820 520 L710 556"/><text class="l" x="814" y="330" text-anchor="end">reads files</text>
+<path class="ap" d="M810 44 L834 44 L834 586 L690 618"/><text class="l" x="842" y="330">reads database</text>
+<!-- KB -->
+<g class="b s"><rect x="350" y="520" width="360" height="50"/><text class="t" x="530" y="541" text-anchor="middle">ppt-knowledge repo (shared memory, reports)</text><text x="530" y="558" text-anchor="middle">everyone reads it; agents write only their own files</text></g>
+<path class="a" d="M345 426 L430 520"/><path class="a" d="M535 426 L535 520"/><path class="a" d="M725 426 L640 520"/>
+<path class="a" d="M135 426 L350 540"/><path class="a" d="M960 266 L960 400 L710 535"/>
+<path class="a" d="M1010 66 L1090 66 L1090 545 L710 545"/>
+<!-- data agent -->
+<g class="b p"><rect x="800" y="600" width="260" height="70"/><text class="t" x="930" y="624" text-anchor="middle">PROPOSED: KPI data agent</text><text x="930" y="642" text-anchor="middle">weekly, read-only, counts only</text><text x="930" y="658" text-anchor="middle">not built; needs owner approval</text></g>
+<g class="b s"><rect x="450" y="610" width="240" height="50"/><text class="t" x="570" y="631" text-anchor="middle">Production database</text><text x="570" y="648" text-anchor="middle">read-only</text></g>
+<path class="d" d="M800 635 L690 635"/><text class="l" x="745" y="627" text-anchor="middle">reads totals</text>
+<path class="d" d="M870 600 L760 570"/><text class="l" x="700" y="590">writes KPI report</text>
+<text class="l" x="600" y="692">Proposed: the data agent would wake PPT, and PPT would email the owner.</text>
+</svg></div>
+<h2>Legend</h2>
+<ul>
+<li><span class="sw"></span>Solid box and arrow: exists today (roster and routines, 2026-10-12).</li>
+<li><span class="sw" style="border-style:dashed;border-color:#0f766e;background:var(--prop)"></span>Dashed teal: proposed, nothing built, nothing created.</li>
+<li>Owner approval points: every brief to the orchestrator needs the owner's go (PPT sends it signed); literature review batches go to the owner by email before anything is approved; the proposed data agent would be read-only until the owner says otherwise.</li>
+<li>Who can write where: coding specialist writes branches and pull requests in product repos and its report; task agent and reviewer write only in ppt-knowledge; CRM agent writes drafts and HubSpot notes only; literature agent and reviewer write only their files in ppt-knowledge. Eval agent: reads ppt-knowledge and the production database, writes only evals/ and literature/gaps.md plus tables starting aieval_. Nobody except PPT emails the owner, and no agent publishes or contacts outsiders on its own.</li>
+<li>Not drawn, to keep it readable: the session librarian reads the owner's business sessions; the manager and CRM agent read the owner's Gmail; the data agent would also read HubSpot totals through the CRM agent's log.</li>
+</ul>
+<p>Text version for editing: agent-flow.mmd (Mermaid). The Caspia by phone conversation flow is in phone-flow.mmd and in the plan document.</p>
+</body></html>
