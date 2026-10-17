@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connecting agents to wearables</title>
+<meta name="description" content="What an AI agent can get from each major wearable, and what the user has to do to connect it. As of October 2026.">
+<style>
+:root{--bg:#fbfaf7;--card:#ffffff;--fg:#1f2937;--muted:#6b7280;--line:#e5e7eb;--link:#0f766e;
+--sign:#0f766e;--sign-bg:#ccfbf1;--app:#9a3412;--app-bg:#ffedd5;--short:#1e40af;--short-bg:#dbeafe;--new:#7c2d12;--new-bg:#fef3c7}
+@media (prefers-color-scheme:dark){:root{--bg:#111827;--card:#1f2937;--fg:#e5e7eb;--muted:#9ca3af;--line:#374151;--link:#5eead4;
+--sign:#5eead4;--sign-bg:#134e4a;--app:#fdba74;--app-bg:#431407;--short:#93c5fd;--short-bg:#1e3a8a;--new:#fde68a;--new-bg:#422006}}
+*{box-sizing:border-box}
+body{margin:0;padding:32px 16px 48px;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:880px;margin:0 auto}
+a{color:var(--link)}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+p.sub{color:var(--muted);margin:0 0 28px;font-size:17px;max-width:640px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 28px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:14px}
+.legend div{display:flex;align-items:center;gap:8px}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.b-sign{color:var(--sign);background:var(--sign-bg)}
+.b-app{color:var(--app);background:var(--app-bg)}
+.b-short{color:var(--short);background:var(--short-bg)}
+.summary{width:100%;border-collapse:collapse;margin:0 0 36px;font-size:15px}
+.summary th,.summary td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.summary th{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.summary td:first-child{font-weight:600}
+h2{font-size:20px;margin:0 0 14px}
+.cards{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.card h3{font-size:19px;margin:0}
+dl{margin:0;display:grid;grid-template-columns:150px 1fr;gap:10px 16px}
+dt{color:var(--muted);font-size:14px;font-weight:600;padding-top:1px}
+dd{margin:0}
+.new{display:inline-block;margin-top:6px;padding:4px 10px;border-radius:8px;background:var(--new-bg);color:var(--new);font-size:14px}
+.new b{font-weight:700}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer ul{padding-left:18px;margin:8px 0 0}
+@media (max-width:640px){
+  h1{font-size:25px}
+  dl{grid-template-columns:1fr;gap:2px}
+  dd{margin-bottom:10px}
+  .summary th:nth-child(3),.summary td:nth-child(3){display:none}
+}
+</style></head><body><main>
+
+<h1>Connecting agents to wearables</h1>
+<p class="sub">What an AI agent can get from each major wearable, and what the user has to do to connect it. Written from the user's side. As of October 2026.</p>
+
+<div class="legend">
+  <div><span class="badge b-sign">Sign in once</span> Standing connection: data comes in on its own, phone on or off</div>
+  <div><span class="badge b-app">Custom app</span> An app on the phone sends the data</div>
+  <div><span class="badge b-short">Shortcut or app</span> Apple's Shortcuts app or a custom app</div>
+</div>
+
+<table class="summary">
+<thead><tr><th>Wearable</th><th>How it connects</th><th>New in 2026</th></tr></thead>
+<tbody>
+<tr><td>Apple Watch</td><td><span class="badge b-short">Shortcut or app</span></td><td>Second HRV measure (RMSSD)</td></tr>
+<tr><td>Garmin</td><td><span class="badge b-sign">Sign in once</span></td><td>None found</td></tr>
+<tr><td>Samsung Galaxy Watch</td><td><span class="badge b-app">Custom app</span></td><td>Irregular rhythm alerts, sleep apnea</td></tr>
+<tr><td>Fitbit and Pixel Watch</td><td><span class="badge b-sign">Sign in once</span></td><td>Old Fitbit connections end Oct 30</td></tr>
+<tr><td>Oura</td><td><span class="badge b-sign">Sign in once</span></td><td>Membership now required</td></tr>
+<tr><td>Whoop</td><td><span class="badge b-sign">Sign in once</span></td><td>None found</td></tr>
+<tr><td>Withings</td><td><span class="badge b-sign">Sign in once</span></td><td>None found</td></tr>
+<tr><td>Polar</td><td><span class="badge b-sign">Sign in once</span></td><td>None found</td></tr>
+<tr><td>Ultrahuman Ring</td><td><span class="badge b-sign">Sign in once</span></td><td>None found</td></tr>
+</tbody></table>
+
+<h2>Each wearable</h2>
+<div class="cards">
+
+<section class="card"><header><h3>Apple Watch</h3><span class="badge b-short">Shortcut or app</span></header><dl>
+<dt>Data</dt><dd>Activity (steps, workouts); sleep; heart (resting heart rate, heart rate, HRV); blood oxygen; other Apple Health readings.<br><span class="new"><b>New in 2026:</b> a second HRV measure (RMSSD) with iOS 27 (not yet confirmed by Apple).</span></dd>
+<dt>Data retrieval</dt><dd>Requires Apple Shortcut app or custom Caspia app</dd>
+<dt>Notes</dt><dd>iPhone only. With the Shortcut, readings are sent when the user taps a link or on a weekly automation; with the Caspia app, they're sent on their own in the background. Health can't be read while the iPhone is locked, so a send can be skipped. Full history can also be exported once from the Health app and uploaded.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Garmin</h3><span class="badge b-sign">Sign in once</span></header><dl>
+<dt>Data</dt><dd>Activity (steps, workouts); sleep; heart (heart rate, HRV); stress and Body Battery; breathing and blood oxygen.</dd>
+<dt>Data retrieval</dt><dd>Sign in with Garmin Connect once; standing connection</dd>
+<dt>Notes</dt><dd>Works with any Garmin that syncs to the Garmin Connect app. No cost to the user.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Samsung Galaxy Watch</h3><span class="badge b-app">Custom app</span></header><dl>
+<dt>Data</dt><dd>Activity (steps, exercise); sleep; heart rate; other Samsung Health readings.<br><span class="new"><b>New in 2026:</b> irregular heart rhythm alerts and sleep apnea results.</span></dd>
+<dt>Data retrieval</dt><dd>Requires custom Caspia app</dd>
+<dt>Notes</dt><dd>Android only. The app sends new readings on its own in the background. The phone must be on, and the user sets the app's battery use to Unrestricted at setup so Samsung's battery saver doesn't pause it. The new 2026 data needs Samsung Health 6.30.2 or later. Without the app, the user can only text screenshots.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Fitbit and Google Pixel Watch</h3><span class="badge b-sign">Sign in once</span></header><dl>
+<dt>Data</dt><dd>Activity (steps, workouts); sleep; heart (heart rate, HRV); other Fitbit readings.</dd>
+<dt>Data retrieval</dt><dd>Sign in with Google once; standing connection</dd>
+<dt>Notes</dt><dd>Fitbit is now Google Health. Old Fitbit connections stop working Oct 30, 2026, so users connect through their Google account. Pixel Watch data syncs to the same account.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Oura</h3><span class="badge b-sign">Sign in once</span></header><dl>
+<dt>Data</dt><dd>Sleep, readiness and activity scores; heart (heart rate, HRV); other Oura readings, per type the user approves.<br><span class="new"><b>New in 2026:</b> Gen 3 and Oura Ring 4 data can't be shared without an active membership.</span></dd>
+<dt>Data retrieval</dt><dd>Sign in with Oura once; standing connection; needs an Oura membership</dd>
+<dt>Notes</dt><dd>Membership is about $5.99 a month or $69.99 a year. Gen 2 rings connect without one. Without a membership, the user can still download their own files and upload them once.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Whoop</h3><span class="badge b-sign">Sign in once</span></header><dl>
+<dt>Data</dt><dd>Recovery, strain and sleep (by stage); workouts; body measurements. No continuous heart rate.</dd>
+<dt>Data retrieval</dt><dd>Sign in with Whoop once; standing connection</dd>
+<dt>Notes</dt><dd>The Whoop band only works with a Whoop membership.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Withings</h3><span class="badge b-sign">Sign in once</span></header><dl>
+<dt>Data</dt><dd>Body (weight, body composition); blood pressure; activity and workouts; sleep; heart (heart rate, ECG).</dd>
+<dt>Data retrieval</dt><dd>Sign in with Withings once; standing connection</dd>
+<dt>Notes</dt><dd>Covers Withings scales and blood pressure cuffs as well as watches.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Polar</h3><span class="badge b-sign">Sign in once</span></header><dl>
+<dt>Data</dt><dd>Workouts; daily activity; body details (weight, height). Current list not confirmed.</dd>
+<dt>Data retrieval</dt><dd>Sign in with Polar Flow once; standing connection</dd>
+<dt>Notes</dt><dd>Only data recorded after the user connects comes through, not earlier history.</dd>
+</dl></section>
+
+<section class="card"><header><h3>Ultrahuman Ring</h3><span class="badge b-sign">Sign in once</span></header><dl>
+<dt>Data</dt><dd>Sleep; activity (movement, steps); heart (heart rate, HRV); temperature; VO2 max and recovery; glucose with the CGM add-on. No workouts.</dd>
+<dt>Data retrieval</dt><dd>Sign in with Ultrahuman once; standing connection</dd>
+<dt>Notes</dt><dd>Glucose only for users with Ultrahuman's CGM add-on. Workouts don't come through.</dd>
+</dl></section>
+
+</div>
+
+<footer>
+<p>Pro-Patient Tech. Checked October 17, 2026. Wearable makers change what they share often; check the maker's own pages before relying on a detail. Items marked "not confirmed" come from reporting, not the maker.</p>
+<p>Main sources:</p>
+<ul>
+<li><a href="https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/">Apple Newsroom, September 2026</a></li>
+<li><a href="https://developer.samsung.com/health/blog/en/new-health-data-type-support-in-samsung-health-data-sdk">Samsung Health Data SDK: new data types</a></li>
+<li><a href="https://developer.garmin.com/gc-developer-program/health-api/">Garmin Health API</a></li>
+<li><a href="https://developers.google.com/health/about">Google Health API</a></li>
+<li><a href="https://support.ouraring.com/hc/en-us/articles/4415266939155">Oura: The Oura API</a></li>
+<li><a href="https://developer.withings.com/">Withings developer portal</a></li>
+<li><a href="https://developer.android.com/health-and-fitness/health-connect/data-types">Android Health Connect data types</a></li>
+</ul>
+<p><a href="../">All public links</a></p>
+</footer>
+</main></body></html>
